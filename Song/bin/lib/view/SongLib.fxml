@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Xiang Ao -->
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lib.view.LibController">
+	
+   <children>
+      <SplitPane dividerPositions="0.6688963210702341" prefHeight="600.0" prefWidth="800.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="485.0" prefWidth="400.0">
+               <children>
+               <HBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+                     <children>
+                        <Button fx:id="add" onAction="#clickButton" text="ADD" />
+                        <Button fx:id="delete" onAction="#clickButton" text="DELETE" />
+                        <Button fx:id="edit" onAction="#clickButton" text="EDIT" />
+                     </children>
+                  </HBox>
+               <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                     <children>
+                        <Button fx:id="apply" onAction="#applyButton" text="APPLY" />
+                        <Button fx:id="cancel" onAction="#cancelButton" text="CANCEL" />
+                     </children>
+                  </HBox>
+                  <GridPane layoutX="72.0" layoutY="270.0" prefHeight="245.0" prefWidth="438.0" AnchorPane.bottomAnchor="83.0" AnchorPane.leftAnchor="72.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="270.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="245.0" minWidth="10.0" prefWidth="105.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="337.0" minWidth="10.0" prefWidth="333.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Text text="Name">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text text="Artist" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text text="Album" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                        </Text>
+                        <Text text="Year" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </Text>
+                        <Label fx:id="nameLabel" textFill="#5e5e5e" GridPane.columnIndex="1">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="artistLabel" textFill="#5e5e5e" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="albumLabel" textFill="#5e5e5e" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="yearLabel" textFill="#5e5e5e" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="addDisplay" layoutX="255.0" layoutY="153.0" prefHeight="245.0" prefWidth="333.0" AnchorPane.bottomAnchor="83.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="270.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>                     
+                        <TextField fx:id="nameAdd" />
+                        <TextField fx:id="artistAdd" GridPane.rowIndex="1" />
+                        <TextField fx:id="albumAdd" GridPane.rowIndex="2" />
+                        <TextField fx:id="yearAdd" GridPane.rowIndex="3" />                  
+                     </children>
+                  </GridPane>
+                  <GridPane fx:id="editDisplay" layoutX="255.0" layoutY="153.0" prefHeight="245.0" prefWidth="333.0" AnchorPane.bottomAnchor="83.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="270.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>                     
+                        <TextField fx:id="nameEdit" />
+                        <TextField fx:id="artistEdit" GridPane.rowIndex="1" />
+                        <TextField fx:id="albumEdit" GridPane.rowIndex="2" />
+                        <TextField fx:id="yearEdit" GridPane.rowIndex="3" />                  
+                     </children>
+                  </GridPane>
+                  <Label fx:id="warningLabel" layoutX="72.0" layoutY="515.0" text="WARNING: Click &quot;APPLY&quot; to comfirm DELETING. Otherwise, click &quot;CANCEL&quot;" AnchorPane.leftAnchor="30.0" />
+<!--                   <Label fx:id="duplicatedLabel" layoutX="72.0" layoutY="515.0" text="WARNING: FILE NAME DUPLICATED" AnchorPane.leftAnchor="150.0" />
+ -->               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>     
+                  <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                  	<padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </ListView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
